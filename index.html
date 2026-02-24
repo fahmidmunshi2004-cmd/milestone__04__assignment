@@ -16,7 +16,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- custom css -->
-     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
 
 </head>
 
@@ -24,37 +24,37 @@
 
     <!-- top content -->
     <section class="top-box mt-[60px] ">
-        <div class="container mx-4 xl:mx-auto mb-[30px] pb-[30px] border-b border-[#e6e7e9]">
-            <h1 class="font-bold text-[32px] mb-5">
+        <div class="container px-4 xl:mx-auto pb-[30px] border-b border-[#e6e7e9]">
+            <h1 class="font-bold text-2xl lg:text-[32px] mb-5">
                 Job Application Tracker
             </h1>
             <div class="grid grid-cols-12 gap-4">
-                <div class="col-span-4">
+                <div class="max-[350px]:col-span-12 max-[650px]:col-span-6 col-span-4">
                     <div class="box border border-[var(--stroke)] rounded-lg p-5 bg-white">
                         <span class="text-[#323B49] font-medium text-sm mb-2">
                             Total
                         </span>
-                        <h4 class="text-[#002C5C] font-bold text-2xl">
+                        <h4 id="totalCount" class="text-[#002C5C] font-bold text-2xl">
                             8
                         </h4>
                     </div>
                 </div>
-                <div class="col-span-4">
+                <div class="max-[350px]:col-span-12 max-[650px]:col-span-6 col-span-4">
                     <div class="box border border-[var(--stroke)] rounded-lg p-5 bg-white">
                         <span class="text-[#323B49] font-medium text-sm mb-2">
                             Total
                         </span>
-                        <h4 class="text-[#10B981] font-bold text-2xl">
+                        <h4 id="interviewCount" class="text-[#10B981] font-bold text-2xl">
                             0
                         </h4>
                     </div>
                 </div>
-                <div class="col-span-4">
+                <div class="max-[350px]:col-span-12 max-[650px]:col-span-6 col-span-4">
                     <div class="box border border-[var(--stroke)] rounded-lg p-5 bg-white">
                         <span class="text-[#323B49] font-medium text-sm mb-2">
                             Total
                         </span>
-                        <h4 class="text-[#EF4444] font-bold text-2xl">
+                        <h4 id="rejectedCount" class="text-[#EF4444] font-bold text-2xl">
                             0
                         </h4>
                     </div>
@@ -63,8 +63,49 @@
         </div>
     </section>
 
+    <!-- main content -->
+    <section class="mb-[60px] mt-[30px]">
+        <div class="container px-4 xl:mx-auto">
+            <div class="flex justify-between items-center mb-6">
+                <h5 class="text-xl font-semibold">Available Jobs</h5>
+                <span id="availableCount" class="text-base font-medium text-[#64748B]"></span>
+            </div>
+
+            <!-- tab button -->
+            <div class="flex items-center gap-2 mb-4 flex-wrap">
+                <button
+                    class="tab_btn tab_all__btn text-[#64748B] font-medium text-xs h-8 w-max rounded-[4px] bg-white flex items-center justify-center border border-[#F1F2F4] px-8 transition duration-300 hover:bg-[#EEF4FF] hover:text-black active">
+                    All
+                </button>
+                <button
+                    class="tab_btn tab_Interview__btn text-[#64748B] font-medium text-xs h-8 w-max rounded-[4px] bg-white flex items-center justify-center border border-[#F1F2F4] px-8 transition duration-300 hover:bg-[#EEF4FF] hover:text-black">
+                    Interview
+                </button>
+                <button
+                    class="tab_btn tab_rejected__btn text-[#64748B] font-medium text-xs h-8 w-max rounded-[4px] bg-white flex items-center justify-center border border-[#F1F2F4] px-8 transition duration-300 hover:bg-[#EEF4FF] hover:text-black">
+                    Rejected
+                </button>
+            </div>
+
+            <!-- tab-all-content -->
+            <div class="tab-all-content"></div>
+
+            <!-- tab-Interview-content -->
+            <div class="tab-interview-content hidden"></div>
+
+            <!-- tab-Rejected-content -->
+            <div class="tab-rejected-content hidden"></div>
+
+
+        </div>
+    </section>
+
 
     <!-- js link -->
+    <script src="./assets/js/data.js"></script>
+    <script src="./assets/js/render.js"></script>
+    <script src="./assets/js/updatedashboard.js"></script>
+    <script src="./assets/js/deletejob.js"></script>
     <script src="./assets/js/main.js"></script>
 </body>
 
